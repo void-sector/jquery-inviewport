@@ -46,11 +46,17 @@
  * some callback functions
  * 
  * @todo find out how to pass the jquery element without using a parameter
- * @param {type} el
+ * @param {type} element
  * @returns {undefined}
  */
-var callback1 = function(el){
-    $(el).addClass('inViewPort');
+var callback1 = function(element){
+    
+    var el = $(element);
+    
+    if (el.hasClass('ckeditorLazyLoad')) {
+        el.removeClass('ckeditorLazyLoad');
+        CKEDITOR.replace(el.attr('id'));
+    }
 };
 var callback2 = function(el) {
     $(el).removeClass('inViewPort');
@@ -72,6 +78,6 @@ $(function () {
      * @note i don't think it performs that well like this
      */
     $(document).scroll(function () {
-        $("textarea").lazyLoad(callback1, callback2);
+        $(".ckeditorLazyLoad").lazyLoad(callback1, callback2);
     });        
 });

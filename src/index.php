@@ -5,7 +5,7 @@ function printTextAreas($number)
     $textAreas = array();
     
     for ($i=1; $i<=$number; $i++) {
-        array_push($textAreas, '<textarea id="textarea_' . $i . '" cols="100" rows="30">textarea '. $i . '</textarea><br>' . "\r\n");
+        array_push($textAreas, '<textarea class="ckeditorLazyLoad" id="textarea_' . $i . '" cols="100" rows="30">textarea '. $i . '</textarea><br>' . "\r\n");
     }
     
     return implode($textAreas);
