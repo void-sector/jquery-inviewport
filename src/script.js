@@ -50,7 +50,7 @@ var loadCKEditor = function(el){
  * 
  * @returns {undefined}
  */
-$(function () {
+;$(function () {
     "use strict";
     
     $(".ckeditorLazyLoad").isInView(loadCKEditor);
@@ -59,3 +59,83 @@ $(function () {
         $(".ckeditorLazyLoad").isInView(loadCKEditor);
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+///**
+// * CKEditory object
+// * @type Object
+// *
+// * Hmm, i don't know about this..
+// * it does make the window.onload method small..
+// */
+//var ckeditorLoader = {
+//    
+//    /**
+//     * ClassName it listens to
+//     * @type String
+//     */
+//    classname : 'ckeditorLazyLoad',
+//    
+//    
+//    /**
+//     * attach to 
+//     *  
+//     * @param {type} event
+//     * @returns {undefined}
+//     */
+//    attachEvent : function(event) {
+//        
+//        var className = '.' + ckeditorLoader.classname;
+//        
+//        $(window).on(event, function() {
+//            $(className).isInView(
+//                ckeditorLoader.activate
+//            );
+//        });        
+//    },
+//    
+//    
+//    /**
+//     * callback method
+//     * 
+//     * @todo load custom config
+//     * @param {JQuery Object} element
+//     * @returns {void}
+//     */
+//    activate : function(element) {
+//        if (element.hasClass(ckeditorLoader.classname)) {
+//            element.removeClass(ckeditorLoader.classname);
+//            CKEDITOR.replace(element.attr('id'));
+//        }
+//    }
+//};
+//
+//
+//
+//
+//
+//
+//
+//
+///**
+// * Window Onload
+// * 
+// * @returns {undefined}
+// */
+//$(function () {
+//    "use strict";
+//    
+//    ckeditorLoader.attachEvent('load');
+//    ckeditorLoader.attachEvent('scroll');
+//});
