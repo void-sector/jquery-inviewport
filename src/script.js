@@ -2,33 +2,21 @@
     $.fn.lazyLoad = function(callback) {
         "use strict";
         
-//        var defaults = {
-//            
-//        };
         
-        this.each(function(index, element) {
-            var rect = element.getBoundingClientRect();
+        /**
+         * @todo optimize, we dont want to loop over all the elements every time on scroll,
+         *       we should register it as an event or something
+         */
+        this.each(function() {
+            var rect = this.getBoundingClientRect();
 
-//            if (this.isInView(rect)) {
             if (rect.top >= 0 && rect.top < (window.innerHeight || document.documentElement.clientHeight) ||
                 rect.bottom >= 0 && rect.bottom < (window.innerHeight || document.documentElement.clientHeight)  ) {
+                
+                // call the callback function!!
                 callback(this);
             }
         });
-        
-//        /**
-//         * private method
-//         *
-//         * @todo find out how private methods work 
-//         * @param {type} el
-//         * @returns {undefined}
-//         */
-//        this.isInView = function(rect) {
-//            return (
-//                rect.top >= 0 && rect.top < (window.innerHeight || document.documentElement.clientHeight) ||
-//                rect.bottom >= 0 && rect.bottom < (window.innerHeight || document.documentElement.clientHeight)                    
-//            );
-//        };
  
         return this;            
     };
@@ -68,11 +56,14 @@ var ckeditorLoader = function(element){
  */
 $(function () {
     "use strict";
-        
+    
+    
+    $(".ckeditorLazyLoad").lazyLoad(ckeditorLoader);
+    
     /**
      * @note i don't think it performs that well like this
      */
-    $(document).scroll(function () {
+    $(window).bind('scroll', function() {
         $(".ckeditorLazyLoad").lazyLoad(ckeditorLoader);
-    });        
+    });
 });
