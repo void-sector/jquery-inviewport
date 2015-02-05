@@ -1,5 +1,5 @@
 ;(function($) {
-    $.fn.lazyLoad = function(callback) {
+    $.fn.isInView = function(callback) {
         "use strict";
         
         this.each(function() {
@@ -9,11 +9,13 @@
                 rect.bottom >= 0 && rect.bottom < (window.innerHeight || document.documentElement.clientHeight)  ) {
                 
                 // call the callback function!!
-                callback(this);
+                callback(
+                    $(this)
+                );
             }
         });
  
-        return this;            
+        return $(this);            
     };
  
 }(jQuery));
@@ -26,13 +28,12 @@
  * callback function
  * 
  * @todo find out how to pass the jquery element without using a parameter
- * @param {type} element
+ * @param {type} el
  * @returns {undefined}
  */
-var ckeditorLoader = function(element){
-    
-    var el = $(element);
-    
+var loadCKEditor = function(el){
+    "use strict";
+
     // kick in the ckeditor if it is not dont yet
     if (el.hasClass('ckeditorLazyLoad')) {
         el.removeClass('ckeditorLazyLoad');
@@ -52,13 +53,9 @@ var ckeditorLoader = function(element){
 $(function () {
     "use strict";
     
+    $(".ckeditorLazyLoad").isInView(loadCKEditor);
     
-    $(".ckeditorLazyLoad").lazyLoad(ckeditorLoader);
-    
-    /**
-     * @note i don't think it performs that well like this
-     */
     $(window).bind('scroll', function() {
-        $(".ckeditorLazyLoad").lazyLoad(ckeditorLoader);
+        $(".ckeditorLazyLoad").isInView(loadCKEditor);
     });
 });

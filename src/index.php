@@ -1,11 +1,17 @@
 <?php
 
-function printTextAreas($number)
+/**
+ * Just a simple way to get a bunch of textarea's
+ *  
+ * @param type $number
+ * @return type
+ */
+function getTextAreas($number)
 {
     $textAreas = array();
     
     for ($i=1; $i<=$number; $i++) {
-        array_push($textAreas, '<textarea class="ckeditorLazyLoad" id="textarea_' . $i . '" cols="100" rows="30">textarea '. $i . '</textarea><br>' . "\r\n");
+        array_push($textAreas, '<textarea class="ckeditorLazyLoad" id="textarea_' . $i . '" cols="100" rows="16">textarea '. $i . '</textarea><br>' . "\r\n");
     }
     
     return implode($textAreas);
@@ -20,23 +26,8 @@ function printTextAreas($number)
 <body>
 
     <div class="textareaHolder">
-        <?= printTextAreas(200); ?>
+        <?= getTextAreas(200); ?>
     </div>    
-
-    <?php /*
-    <div class="displayHidden">
-        <?= printTextAreas(1); ?>
-    </div>    
-
-    <div class="visibilityHidden">
-        <?= printTextAreas(2); ?>
-    </div>    
-
-    <div class="opacityHidden">
-        <?= printTextAreas(4); ?>
-    </div>  
-
-    */ ?>
 
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>
