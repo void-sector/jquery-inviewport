@@ -31,7 +31,7 @@
  * @param {type} el
  * @returns {undefined}
  */
-var loadCKEditor = function(el){
+var loadCKEditor = function(el) {
     "use strict";
 
     // kick in the ckeditor if it is not dont yet
@@ -50,7 +50,7 @@ var loadCKEditor = function(el){
  * 
  * @returns {undefined}
  */
-;$(function () {
+;$(function() {
     "use strict";
     
     $(".ckeditorLazyLoad").isInView(loadCKEditor);
@@ -78,6 +78,10 @@ var loadCKEditor = function(el){
 // *
 // * Hmm, i don't know about this..
 // * it does make the window.onload method small..
+// * no, not like this, this is bad oo programming..
+// 
+// * lol, having conversations with myself :P
+// 
 // */
 //var ckeditorLoader = {
 //    
@@ -86,7 +90,6 @@ var loadCKEditor = function(el){
 //     * @type String
 //     */
 //    classname : 'ckeditorLazyLoad',
-//    
 //    
 //    /**
 //     * attach to 
@@ -104,7 +107,6 @@ var loadCKEditor = function(el){
 //            );
 //        });        
 //    },
-//    
 //    
 //    /**
 //     * callback method
@@ -133,7 +135,7 @@ var loadCKEditor = function(el){
 // * 
 // * @returns {undefined}
 // */
-//$(function () {
+//$(function() {
 //    "use strict";
 //    
 //    ckeditorLoader.attachEvent('load');
