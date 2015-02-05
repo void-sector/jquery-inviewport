@@ -2,11 +2,6 @@
     $.fn.lazyLoad = function(callback) {
         "use strict";
         
-        
-        /**
-         * @todo optimize, we dont want to loop over all the elements every time on scroll,
-         *       we should register it as an event or something
-         */
         this.each(function() {
             var rect = this.getBoundingClientRect();
 
