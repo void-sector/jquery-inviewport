@@ -12,7 +12,7 @@
 //            if (this.isInView(rect)) {
             if (rect.top >= 0 && rect.top < (window.innerHeight || document.documentElement.clientHeight) ||
                 rect.bottom >= 0 && rect.bottom < (window.innerHeight || document.documentElement.clientHeight)  ) {
-                callback1(this);
+                callback(this);
             }
         });
         
@@ -46,7 +46,7 @@
  * @param {type} element
  * @returns {undefined}
  */
-var callback = function(element){
+var ckeditorLoader = function(element){
     
     var el = $(element);
     
@@ -73,6 +73,6 @@ $(function () {
      * @note i don't think it performs that well like this
      */
     $(document).scroll(function () {
-        $(".ckeditorLazyLoad").lazyLoad(callback1);
+        $(".ckeditorLazyLoad").lazyLoad(ckeditorLoader);
     });        
 });
