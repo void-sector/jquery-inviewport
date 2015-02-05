@@ -21,7 +21,6 @@ function getTextAreas($number)
 <html>
 <head>
 <title>Title of the document</title>
-<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 

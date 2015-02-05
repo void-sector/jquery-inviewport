@@ -8,7 +8,7 @@
             if (rect.top >= 0 && rect.top < (window.innerHeight || document.documentElement.clientHeight) ||
                 rect.bottom >= 0 && rect.bottom < (window.innerHeight || document.documentElement.clientHeight)  ) {
                 
-                // call the callback function!!
+                // call the callback!!
                 callback(
                     $(this)
                 );
@@ -34,7 +34,7 @@
 var loadCKEditor = function(el) {
     "use strict";
 
-    // kick in the ckeditor if it is not dont yet
+    // load the ckeditor if it is not dont yet
     if (el.hasClass('ckeditorLazyLoad')) {
         el.removeClass('ckeditorLazyLoad');
         CKEDITOR.replace(el.attr('id'));
@@ -52,7 +52,7 @@ var loadCKEditor = function(el) {
  */
 ;$(function() {
     "use strict";
-    
+
     $(".ckeditorLazyLoad").isInView(loadCKEditor);
     
     $(window).bind('scroll', function() {
