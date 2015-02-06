@@ -1,3 +1,9 @@
+/**
+ * JQuery Plugin isInView
+ * 
+ * @param {type} $
+ * @returns {undefined}
+ */
 ;(function($) {
     $.fn.isInView = function(callback) {
         "use strict";
