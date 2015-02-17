@@ -6,10 +6,10 @@
 ;$(function() {
     "use strict";
 
-    $(".ckeditorLazyLoad").isInView(loadCKEditor);
+    $(".ckeditorLazyLoad").inViewport(loadCKEditor);
     
     $(window).bind('scroll', function() {
-        $(".ckeditorLazyLoad").isInView(loadCKEditor);
+        $(".ckeditorLazyLoad").inViewport(loadCKEditor);
     });
 });
 

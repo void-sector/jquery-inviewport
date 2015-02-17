@@ -1,10 +1,12 @@
-# ckeditor-lazy-loader
+# jquery-inViewport
 
-transforms a textarea into a ckeditor when it's in the viewport of the browser
+performs an callback on an element when it scroll's into the viewport
 
 Example:
 ~~~
-$('.ckeditorLazyLoad').isInView(function(el) {
+$('.elementClassname').isInView(function(el) {
     // do some logic here
 });
 ~~~
+
+In this example we load a replace a textarea with a ckeditor when it scroll's into the viewport
