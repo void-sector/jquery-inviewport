@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Just a simple way to get a bunch of textarea's
+ * Just a simple dirty way to get a bunch of textarea's
  *  
  * @param type $number
  * @return type
@@ -28,8 +28,13 @@ function getTextAreas($number)
         <?= getTextAreas(200); ?>
     </div>    
 
+<!-- load from cdn -->    
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>
-<script src="script.js"></script>
+
+<!-- grab custom -->
+<script src="./jquery.inViewport.js"></script>
+<script src="./main.js"></script>
+
 </body>
 </html>
